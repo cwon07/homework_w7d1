@@ -6,6 +6,12 @@ app.get("/greeting/:name", (req, res) => {
     res.send(`What's up, ${name}.`)
 })
 
+app.get("/tip/:total/:tipPercentage", (req, res) => {
+    const total = req.params.total
+    const tipPercentage = req.params.tipPercentage
+    res.send(`Your total comes to ${total} with ${tipPercentage}% tips.`)
+})
+
 app.listen(3000, () => {
     console.log("listening")
 })
